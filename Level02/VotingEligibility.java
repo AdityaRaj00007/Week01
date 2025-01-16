@@ -1,0 +1,50 @@
+import java.util.Random;
+import java.util.Scanner;
+
+public class VotingEligibility {
+
+    // Method to generate random 2-digit ages for n students
+    public static int[] generateRandomAges(int n) {
+        Random random = new Random();
+        int[] ages = new int[n];
+        for (int i = 0; i < n; i++) {
+            ages[i] = random.nextInt(90) + 10; // Generate random ages between 10 and 99
+        }
+        return ages;
+    }
+
+    // Method to determine voting eligibility
+    public static String[][] determineVotingEligibility(int[] ages) {
+        String[][] result = new String[ages.length][2];
+        for (int i = 0; i < ages.length; i++) {
+            result[i][0] = String.valueOf(ages[i]); // Store the age
+            if (ages[i] < 0) {
+                result[i][1] = "Cannot Vote"; // Negative age is invalid
+            } else if (ages[i] >= 18) {
+                result[i][1] = "Can Vote"; // Age 18 or above
+            } else {
+                result[i][1] = "Cannot Vote"; // Age below 18
+            }
+        }
+        return result;
+    }
+
+    // Method to display the 2D array in a tabular format
+    public static void displayResults(String[][] data) {
+        System.out.println("Age Voting Eligibility");
+        for (String[] row : data) {
+            System.out.println(row[0] + "    " + row[1]);
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter the number of students (e.g., 10):");
+        int numStudents = input.nextInt();
+        int[] ages = generateRandomAges(numStudents);
+        String[][] votingEligibility = determineVotingEligibility(ages);
+        displayResults(votingEligibility);
+
+        input.close();
+    }
+}

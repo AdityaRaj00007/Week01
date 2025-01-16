@@ -1,9 +1,10 @@
 import java.util.Scanner;
 
-public class StringIndexOutOfBounds {
+public class StringIndexOutOfBoundsExceptionGenerator {
     public static char generateStringIndexOutOfBoundsException(String one) {
         return one.charAt(100);
     }
+    
 
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);

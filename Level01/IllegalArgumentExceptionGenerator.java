@@ -1,7 +1,5 @@
 import java.util.Scanner;
-import javax.management.openmbean.OpenDataException;
-
-public class IllegalArgument {
+public class IllegalArgumentExceptionGenerator {
 
     // Method to generate an IllegalArgumentException
     public static void generateIllegalArgumentException(int number) {

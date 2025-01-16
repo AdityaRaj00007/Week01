@@ -1,4 +1,4 @@
-public class NullPointer {
+public class NullPointerExceptionGenerator {
 
     public static char generateNullPointerException(String one) {
         return one.charAt(0);
