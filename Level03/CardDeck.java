@@ -22,9 +22,9 @@ public class CardDeck {
 
     // Method to shuffle the deck of cards
     public static String[] shuffleDeck(String[] deck) {
-        Random rand = new Random();
+        Random random = new Random();
         for (int i = 0; i < deck.length; i++) {
-            int randomCardIndex = i + rand.nextInt(deck.length - i);
+            int randomCardIndex = i + random.nextInt(deck.length - i);
             // Swap the current card with the random card
             String temp = deck[i];
             deck[i] = deck[randomCardIndex];
